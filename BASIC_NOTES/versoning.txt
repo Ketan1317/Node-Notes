@@ -1,0 +1,34 @@
+Versioning in Node.js =>
+Versioning in Node.js follows the Semantic Versioning (SemVer) specification. SemVer is a versioning system designed to convey meaning about the changes introduced in a release and their compatibility with previous versions.
+
+Node.js Versioning Format
+Node.js versions are denoted as:
+==> MAJOR.MINOR.PATCH <==
+>MAJOR: Indicates breaking changes. Existing code may stop working after a major update.
+>MINOR: Introduces new features that are backward-compatible.
+>PATCH: Fixes bugs and makes improvements without changing the existing functionality.
+
+Example:
+Version 16.17.1:
+16 = MAJOR version.
+17 = MINOR version.
+1 = PATCH version.
+
+How to Specify Versions in package.json
+In Node.js projects, dependencies are specified in the package.json file using SemVer:
+
+Example:
+"dependencies": {
+  "express": "^4.17.1",
+  "lodash": "~4.17.21"
+}
+Caret (^): Allows updates to the latest MINOR and PATCH versions.
+^4.17.1 matches any version >=4.17.1 <5.0.0.
+
+Tilde (~): Allows updates to the latest PATCH version only.
+~4.17.21 matches any version >=4.17.21 <4.18.0.
+
+Exact Version: Installs the specified version only.
+"lodash": "4.17.21" installs exactly 4.17.21.
+
+

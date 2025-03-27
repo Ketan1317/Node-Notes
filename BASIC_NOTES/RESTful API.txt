@@ -1,0 +1,16 @@
+A RESTful API (Representational State Transfer API) is a web service that follows REST principles, allowing communication between a client and a server using standard HTTP methods (GET, POST, PUT, DELETE, etc.).
+
+Key Features of RESTful API:
+>Stateless: Each request from the client contains all the information needed for the server to process it; no session state is stored on the server.
+
+>Resource-Oriented: Data is represented as resources (e.g., users, orders) accessed via unique URLs.
+
+>HTTP Methods:
+GET: Retrieve data.
+POST: Create new data.
+PUT: Update existing data.
+DELETE: Remove data.
+
+Format: Uses standard formats like JSON or XML for request and response payloads.
+
+Scalable and Platform-Independent: Can be used across different programming languages and platforms.

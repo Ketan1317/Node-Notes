@@ -1,0 +1,53 @@
+Node Doesn't include the Window or DOM elements;
+
+How Node.js Works =>
+Node.js is a runtime environment for executing JavaScript on the server side. It is built on Chrome's V8 JavaScript engine and uses an event-driven, non-blocking I/O model to handle high concurrency efficiently.
+
+Key Concepts => 
+>Single-Threaded Event Loop:
+Node.js operates on a single thread using an event loop to manage multiple concurrent requests.
+Instead of creating new threads for each request, it handles I/O operations asynchronously.
+>Non-Blocking I/O:
+Node.js uses non-blocking operations for tasks like file reading, database access, or HTTP requests.
+This means the server can handle other tasks while waiting for I/O operations to complete.
+>Event-Driven Architecture :
+Node.js relies on events and callbacks. When an operation completes, it triggers an event or executes a callback function.
+
+Workflow =>
+> Incoming Request:
+When a client sends a request, it is added to the event queue.
+> Event Loop:
+The event loop checks for tasks in the queue.
+If the task involves computation, it is executed immediately.
+If the task involves I/O, it is offloaded to the libuv thread pool.
+> Callbacks:
+Once an I/O task is complete, its callback is added to the event loop to be executed.
+
+Key Components =>
+> V8 Engine:
+Converts JavaScript code into machine code for fast execution.
+> libuv:
+A C library that provides the event loop and handles asynchronous I/O operations.
+
+DIAGRAM =>>>>
+
+Client Request -> Event Queue -> Event Loop
+    |                 |               |
+    |                 |--I/O--->Thread Pool
+    |                 |
+    |-> Response <----- Completed Tasks
+
+
+=> http.createServer() in Node.js:
+The http.createServer() method in Node.js is used to create an HTTP server. This server listens for incoming HTTP requests and can respond to them. It's part of the built-in http module, which allows you to build web servers and handle HTTP protocols without additional libraries.
+
+PARAMETERS:
+
+> req (Request Object):
+Represents the incoming HTTP request.
+Contains details like headers, method, and URL.
+
+> res (Response Object):
+Represents the response that will be sent to the client.
+Contains methods to send data back to the client.
+

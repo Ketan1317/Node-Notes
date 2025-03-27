@@ -1,0 +1,66 @@
+HTTP Methods Overview
+HTTP methods define the action to be performed on a resource. Here’s a quick summary of GET, POST, PUT, PATCH, and DELETE:
+
+1. GET
+Purpose: Retrieve data from the server.
+Characteristics:
+>Safe and idempotent (doesn’t modify server data).
+>Can include query parameters (e.g., /users?id=1).
+
+Example:
+app.get('/users', (req, res) => {
+  res.send('Fetching users');
+});
+Use Case: Fetching data (e.g., retrieving a list of users).
+
+
+2. POST
+Purpose: Send data to the server to create a new resource.
+Characteristics:
+>Not idempotent (can create multiple resources if called multiple times).
+>Data sent in the request body.
+
+Example:
+app.post('/users', (req, res) => {
+  res.send('User created');
+});
+Use Case: Adding a new user or record to a database.
+
+
+3. PUT
+Purpose: Update or replace an entire resource.
+Characteristics:
+>Idempotent (multiple calls produce the same result).
+>Sends the full resource in the request body.
+
+Example:
+app.put('/users/:id', (req, res) => {
+  res.send(`User with ID ${req.params.id} updated`);
+});
+Use Case: Updating a user’s details by replacing their entire record.
+
+
+4. PATCH
+Purpose: Update part of a resource.
+Characteristics:
+>Not necessarily idempotent (depends on the implementation).
+>Sends only the fields to be updated in the request body.
+
+Example:
+app.patch('/users/:id', (req, res) => {
+  res.send(`User with ID ${req.params.id} partially updated`);
+});
+Use Case: Changing only the email of a user without affecting other fields.
+
+
+5. DELETE
+Purpose: Remove a resource from the server.
+Characteristics:
+Idempotent (multiple calls produce the same result—resource is deleted).
+
+Example:
+app.delete('/users/:id', (req, res) => {
+  res.send(`User with ID ${req.params.id} deleted`);
+});
+Use Case: Deleting a user or a resource.
+

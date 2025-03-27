@@ -1,0 +1,12 @@
+Synchronous vs Asynchronous Functions
+
+Synchronous Functions(Blocking): (fs.writeFileSync) -> (fs.readFileSync) ->
+> Returns a Value: A synchronous function performs its operation and immediately returns a result (or throws an error) before proceeding to the next line of code.
+> Blocking: It blocks the execution of subsequent code until the current operation is complete.
+
+Asynchronous Functions(Non-Blocking): (fs.writeFile) -> (fs.readFile) ->
+>Doesn't Directly Return a Value: An asynchronous function doesn't return the result immediately. Instead,
+it performs the operation in the background and requires either:
+- A callback function to handle the result/error, or
+- A promise to handle the result asynchronously.
+> Non-Blocking: It allows the execution of subsequent code while the operation is in progress.

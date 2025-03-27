@@ -1,0 +1,38 @@
+URL Module in Node.js => 
+The url module in Node.js allows you to parse and manipulate URLs easily.
+Importing the Module
+const url = require("url");
+
+Common Properties of Parsed URL Object =>
+pathname: The path of the URL (e.g., /about).
+query: Parsed query string (if parseQueryString is true).
+host: The hostname and port (e.g., localhost:3000).
+protocol: The protocol (e.g., http:).
+
+=> Key Functions <=
+1: url.parse()
+
+Parses a URL string into an object.
+
+Syntax: url.parse(urlString, parseQueryString, slashesDenoteHost)
+
+> urlString: The URL to parse.
+> parseQueryString: (Optional) If true, query parameters are parsed into an object.
+> slashesDenoteHost: (Optional) If true, the first part is treated as the host.
+
+Example:
+const myUrl = url.parse("http://localhost:3000/about?myname=Ketan", true);
+console.log(myUrl.pathname); // "/about"
+console.log(myUrl.query.myname); // "Ketan"
+
+2: url.format()
+Converts a URL object back into a string.
+Example:
+const urlObj = {
+  protocol: "http:",
+  host: "localhost:3000",
+  pathname: "/about",
+  query: { myname: "Ketan" },
+};
+const urlString = url.format(urlObj);
+console.log(urlString); // "http://localhost:3000/about?myname=Ketan"
